@@ -18,7 +18,7 @@ public class DATABASE
     {
         //ogni volta che instanzio una classe, la imposto con la stringa di connessione corretta
 
-        conn.ConnectionString = "Data Source=LAPTOP-7HMSS8DL\\SQLEXPRESS;Initial Catalog=AUTOSALONI;Integrated Security=True;";
+        conn.ConnectionString = "Data Source=LAPTOP-7HMSS8DL\\SQLEXPRESS;Initial Catalog=AGAMENNONE;Integrated Security=True;";
         cmd.Connection = conn;
 
     }
