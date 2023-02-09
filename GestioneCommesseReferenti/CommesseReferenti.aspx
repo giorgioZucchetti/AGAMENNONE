@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <div class="row top-buffer">
                             <div class="col-md-9 divTable">
-                                Quì ci va la tabella
+                                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
                             </div>
                             <div class="col-md-3">
                                 <asp:UpdatePanel ID="up1" runat="server">
@@ -36,7 +36,7 @@
             <div class="col-12 mx-auto">
                 <div class="card bg-light mb-3 border rounded">
                     <div class="card-header">
-                        <h5 class="card-title">Lista commesse</h5>
+                        <h5 class="card-title">Lista referenti</h5>
                     </div>
                     <div class="card-body">
                         <div class="row top-buffer">
@@ -86,7 +86,7 @@
             <div class="modal-content">
                 <%--Modal header--%>
                 <div class="modal-header">
-                    <h4 class="modal-title" id="staticBackdropLabel2">Modifica dati azienda</h4>
+                    <h4 class="modal-title" id="staticBackdropLabel2">Modifica dati commessa</h4>
                     <%--<button type="button" class="btn-close" data-bs-dismiss="modal"></button>--%>
                 </div>
                 <!-- Modal body -->
