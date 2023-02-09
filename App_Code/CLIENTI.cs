@@ -91,8 +91,8 @@ public class CLIENTI
         D.cmd.Parameters.AddWithValue("@CAP", CAP);
         D.cmd.Parameters.AddWithValue("@PROVINCIA", PROVINCIA);
         D.cmd.Parameters.AddWithValue("@EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("@@TELEFONO", @TELEFONO);
-        D.cmd.Parameters.AddWithValue("@@CODICEFISCALE", @CODICEFISCALE);
+        D.cmd.Parameters.AddWithValue("@TELEFONO", @TELEFONO);
+        D.cmd.Parameters.AddWithValue("@CODICEFISCALE", @CODICEFISCALE);
         D.cmd.Parameters.AddWithValue("@PIVA", PIVA);
         D.cmd.Parameters.AddWithValue("@PEC", PEC);
         D.cmd.Parameters.AddWithValue("@TITOLARE", TITOLARE);

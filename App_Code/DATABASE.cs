@@ -19,10 +19,7 @@ public class DATABASE
     public DATABASE()
     {
         //ogni volta che instanzio una classe, la imposto con la stringa di connessione corretta
-
         conn.ConnectionString = connStr;
-        cmd.Connection = conn;
-
     }
 
     //eseguo una stored procedure senza che ritornino dei dati
