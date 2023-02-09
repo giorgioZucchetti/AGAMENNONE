@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="text-center mt-2">
-            <asp:Button ID="btnModifica" class="btn btn-primary" runat="server" Text="Modifica" />
+            <asp:Button ID="btnModifica" class="btn btn-primary" runat="server" Text="Modifica" OnClick="btnModifica_Click" />
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>

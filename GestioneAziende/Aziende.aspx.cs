@@ -9,8 +9,21 @@ public partial class Default2 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        Griglia.DataBind();
     }
 
-    
+    protected void Griglia_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        //mancano i controlli formali
+        Session["chiave"] = Griglia.SelectedValue.ToString();
+    }
+
 }
+
+
+
+
+
+
+
+
