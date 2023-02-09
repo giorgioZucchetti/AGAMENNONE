@@ -74,7 +74,7 @@ public class CLIENTI
 
     public DataTable CLIENTI_SelectByKey()
     {
-        D.query = "spCLIENTI_SelectByKey";
+        D.cmd.CommandText = "spCLIENTI_SelectByKey";
         D.cmd.Parameters.AddWithValue("@chiave", chiave);
         DT = D.EseguiSPRead();
         return DT;

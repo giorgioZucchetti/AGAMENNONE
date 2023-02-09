@@ -14,16 +14,16 @@
     <form id="form1" runat="server">
         <div class="container-fluid">
             <div class="row">
-                <asp:Label ID="lblClienti" runat="server" Text="Scegli cliente"></asp:Label>
+                <asp:Label ID="lblClienti" class="form-label" runat="server" Text="Scegli cliente"></asp:Label>
                 <asp:DropDownList class="form-select" ID="ddlCLIENTI" runat="server"></asp:DropDownList>
             </div>
             <div class="row">
-                <asp:Label ID="lblDipendenti" runat="server" Text="Scegli dipendente"></asp:Label>
+                <asp:Label ID="lblDipendenti" class="form-label" runat="server" Text="Scegli dipendente"></asp:Label>
                 <asp:DropDownList class="form-select" ID="ddlDIPENDENTI" runat="server"></asp:DropDownList>
             </div>
 
             <div class="row">
-                <asp:Label ID="lblCORPOORA" runat="server" Text="Scegli tipologia commessa"></asp:Label>
+                <asp:Label ID="lblCORPOORA" class="form-label" runat="server" Text="Scegli tipologia commessa"></asp:Label>
                 <select class="form-select">
                     <option value="C">Corpo</option>
                     <option value="R">Ora</option>
