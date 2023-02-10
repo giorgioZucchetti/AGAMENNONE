@@ -86,8 +86,22 @@ public class AZIENDE
     public void AZIENDE_Update()
     {
         DATABASE D = new DATABASE();
-        D.cmd.CommandText = "spAZIENDE_SelectByKey";
+        D.cmd.CommandText = "spAZIENDE_Update";
         D.cmd.Parameters.AddWithValue("chiave", chiave);
+        D.cmd.Parameters.AddWithValue("RAGIONESOCIALE", RAGIONESOCIALE);
+        D.cmd.Parameters.AddWithValue("INDIRIZZO", INDIRIZZO);
+        D.cmd.Parameters.AddWithValue("CITTA", CITTA);
+        D.cmd.Parameters.AddWithValue("CAP", CAP);
+        D.cmd.Parameters.AddWithValue("PROVINCIA", PROVINCIA);
+        D.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
+        D.cmd.Parameters.AddWithValue("TELEFONO", TELEFONO);
+        D.cmd.Parameters.AddWithValue("CODICEFISCALE", CODICEFISCALE);
+        D.cmd.Parameters.AddWithValue("PIVA", PIVA);
+        D.cmd.Parameters.AddWithValue("PEC", PEC);
+        D.cmd.Parameters.AddWithValue("CFE", CFE);
+        D.cmd.Parameters.AddWithValue("TITOLARE", TITOLARE);
+        D.cmd.Parameters.AddWithValue("EMAILTITOLARE", EMAILTITOLARE);
+        D.cmd.Parameters.AddWithValue("TELTITOLARE", TELTITOLARE);
         D.EseguiSPNonRead();
     }
 }

@@ -61,10 +61,11 @@ public class CLIENTI
         D.cmd.Parameters.AddWithValue("@CAP", CAP);
         D.cmd.Parameters.AddWithValue("@PROVINCIA", PROVINCIA);
         D.cmd.Parameters.AddWithValue("@EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("@@TELEFONO", @TELEFONO);
-        D.cmd.Parameters.AddWithValue("@@CODICEFISCALE", @CODICEFISCALE);
+        D.cmd.Parameters.AddWithValue("@TELEFONO", TELEFONO);
+        D.cmd.Parameters.AddWithValue("@CODICEFISCALE", CODICEFISCALE);
         D.cmd.Parameters.AddWithValue("@PIVA", PIVA);
         D.cmd.Parameters.AddWithValue("@PEC", PEC);
+        D.cmd.Parameters.AddWithValue("@CFE", CFE);
         D.cmd.Parameters.AddWithValue("@TITOLARE", TITOLARE);
         D.cmd.Parameters.AddWithValue("@EMAILTITOLARE", EMAILTITOLARE);
         D.cmd.Parameters.AddWithValue("@TELTITOLARE", TELTITOLARE);
@@ -73,7 +74,7 @@ public class CLIENTI
 
     public DataTable CLIENTI_SelectByKey()
     {
-        D.query = "spCLIENTI_SelectByKey";
+        D.cmd.CommandText = "spCLIENTI_SelectByKey";
         D.cmd.Parameters.AddWithValue("@chiave", chiave);
         DT = D.EseguiSPRead();
         return DT;
@@ -90,8 +91,8 @@ public class CLIENTI
         D.cmd.Parameters.AddWithValue("@CAP", CAP);
         D.cmd.Parameters.AddWithValue("@PROVINCIA", PROVINCIA);
         D.cmd.Parameters.AddWithValue("@EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("@@TELEFONO", @TELEFONO);
-        D.cmd.Parameters.AddWithValue("@@CODICEFISCALE", @CODICEFISCALE);
+        D.cmd.Parameters.AddWithValue("@TELEFONO", @TELEFONO);
+        D.cmd.Parameters.AddWithValue("@CODICEFISCALE", @CODICEFISCALE);
         D.cmd.Parameters.AddWithValue("@PIVA", PIVA);
         D.cmd.Parameters.AddWithValue("@PEC", PEC);
         D.cmd.Parameters.AddWithValue("@TITOLARE", TITOLARE);

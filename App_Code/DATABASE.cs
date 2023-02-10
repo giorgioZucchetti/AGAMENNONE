@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Configuration;
 
+
 public class DATABASE
 {
     //membri della classe che diventano proprietà dell'oggetto
@@ -14,14 +15,12 @@ public class DATABASE
     public SqlCommand cmd = new SqlCommand();
     public SqlDataAdapter DA = new SqlDataAdapter();
     public DataTable DT = new DataTable();
-    private readonly string connStr = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+    private readonly string connStr = ConfigurationManager.ConnectionStrings["AGAMENNONEConnectionString"].ConnectionString;
     public DATABASE()
     {
         //ogni volta che instanzio una classe, la imposto con la stringa di connessione corretta
-
         conn.ConnectionString = connStr;
-        cmd.Connection = conn;
-
+        cmd.Connection= conn;
     }
 
     //eseguo una stored procedure senza che ritornino dei dati
@@ -41,4 +40,6 @@ public class DATABASE
         DA.Fill(DT);
         return DT;
     }
+
+
 }

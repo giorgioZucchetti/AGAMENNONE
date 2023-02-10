@@ -7,16 +7,16 @@ using System.Text;
 using System.Web;
 
 
-public class CRIPTOPWD
+public static class CRIPTOPWD
 {
     //membri della classe
-    public string KEY = "bf4ca5898a4e4133bbce2ea2315a1916";
-    public CRIPTOPWD()
+    public static string KEY = "bf4ca5898a4e4133bbce2ea2315a1916";
+    static CRIPTOPWD()
     {
         
     }
     //oggetto che cripta la password
-    public string Crypta(string plainText)
+    public static string Crypta(string plainText)
     {
         byte[] iv = new byte[16];
         byte[] array;
@@ -45,7 +45,7 @@ public class CRIPTOPWD
     }
 
     //oggetto che decripta la password 
-    public string Decrypta(string cipherText)
+    public static string Decrypta(string cipherText)
     {
         byte[] iv = new byte[16];
         byte[] buffer = Convert.FromBase64String(cipherText);
