@@ -129,8 +129,8 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                    </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
                 </main>
             </div>
         </div>
