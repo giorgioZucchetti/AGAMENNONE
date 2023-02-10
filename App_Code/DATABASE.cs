@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Web;
-
+using System.Configuration;
 
 public class DATABASE
 {
@@ -14,11 +14,12 @@ public class DATABASE
     public SqlCommand cmd = new SqlCommand();
     public SqlDataAdapter DA = new SqlDataAdapter();
     public DataTable DT = new DataTable();
+    private readonly string connStr = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
     public DATABASE()
     {
         //ogni volta che instanzio una classe, la imposto con la stringa di connessione corretta
 
-        conn.ConnectionString = "Data Source=LAPTOP-7HMSS8DL\\SQLEXPRESS;Initial Catalog=AUTOSALONI;Integrated Security=True;";
+        conn.ConnectionString = connStr;
         cmd.Connection = conn;
 
     }
