@@ -9,13 +9,13 @@ public partial class Default3 : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        griglia.DataBind();
+        Griglia.DataBind();
     }
 
     protected void Griglia_SelectedIndexChanged(object sender, EventArgs e)
     {
         //mancano i controlli formali
-        Session["chiave"] = griglia.SelectedValue.ToString();
+        Session["chiave"] = Griglia.SelectedValue.ToString();
     }
 
 }

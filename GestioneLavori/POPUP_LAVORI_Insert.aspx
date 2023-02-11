@@ -6,7 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>INSERIMENTO LAVORI</title>
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -16,12 +16,12 @@
             <div class="col-sm-2">
                 <asp:Label ID="Label1" runat="server" class="form-label" Text="Commessa:"></asp:Label>
                 <asp:DropDownList ID="ddlCOMMESSA" runat="server" DataSourceID="sdsCOMMESSA" DataTextField="DESCRIZIONE" DataValueField="chiave"></asp:DropDownList>
-                <asp:SqlDataSource ID="sdsCOMMESSA" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spCOMMESSE_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="sdsCOMMESSA" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spCOMMESSE_SelectAll_DDL_Descrizione" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
             </div>
             <div class="col-sm-2">
                 <asp:Label ID="Label2" runat="server" class="form-label" Text="Dipendente:"></asp:Label>
                 <asp:DropDownList ID="ddlDIPENDENTE" runat="server" DataSourceID="sdsDIPENDENTE" DataTextField="EMAIL" DataValueField="chiave"></asp:DropDownList>
-                <asp:SqlDataSource ID="sdsDIPENDENTE" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spDIPENDENTI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="sdsDIPENDENTE" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spDIPENDENTI_SelectAll_DDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
             </div>
 
             <div class="row">
@@ -79,7 +79,7 @@
             </div>
 
             <div class="text-center mt-2">
-                <asp:Button ID="btnInserisci" type="button" runat="server" Text="Inserisci" class="btn btn-primary" />
+                <asp:Button ID="btnInserisci" type="button" runat="server" Text="Inserisci" class="btn btn-primary" OnClick="btnInserisci_Click" />
             </div>
 
         </div>

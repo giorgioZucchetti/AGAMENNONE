@@ -12,8 +12,31 @@
                     </div>
                     <div class="card-body">
                         <div class="row top-buffer">
-                            <div class="col-md-9 divTable">
-                                <asp:GridView ID="griglia" class="table" runat="server"></asp:GridView>                     
+                            <div class="col-md-9" style="overflow: auto;">
+                                <asp:GridView ID="Griglia" class="table" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsSelectDipendenti" OnSelectedIndexChanged="Griglia_SelectedIndexChanged">
+                                    <Columns>
+                                        <asp:CommandField ShowSelectButton="True"></asp:CommandField>
+                                        <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" SortExpression="chiave" Visible="False"  ></asp:BoundField>
+                                        <asp:BoundField DataField="chiaveAZIENDA" HeaderText="chiaveAZIENDA" SortExpression="chiaveAZIENDA" Visible="False"  ></asp:BoundField>
+                                        <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE"></asp:BoundField>
+                                        <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL"></asp:BoundField>
+                                        <asp:BoundField DataField="PWD" HeaderText="PWD" SortExpression="PWD" Visible="False" ></asp:BoundField>
+                                        <asp:CheckBoxField DataField="ABILITATO" HeaderText="ABILITATO" SortExpression="ABILITATO"></asp:CheckBoxField>
+                                        <asp:CheckBoxField DataField="PRIMOACCESSO" HeaderText="PRIMOACCESSO" SortExpression="PRIMOACCESSO" Visible="False" ></asp:CheckBoxField>
+                                        <asp:BoundField DataField="RUOLO" HeaderText="RUOLO" SortExpression="RUOLO"></asp:BoundField>
+                                        <asp:BoundField DataField="COGNOME" HeaderText="COGNOME" SortExpression="COGNOME"></asp:BoundField>
+                                        <asp:BoundField DataField="NOME" HeaderText="NOME" SortExpression="NOME"></asp:BoundField>
+                                        <asp:BoundField DataField="INDIRIZZO" HeaderText="INDIRIZZO" SortExpression="INDIRIZZO"></asp:BoundField>
+                                        <asp:BoundField DataField="CITTA" HeaderText="CITTA" SortExpression="CITTA"></asp:BoundField>
+                                        <asp:BoundField DataField="CAP" HeaderText="CAP" SortExpression="CAP"></asp:BoundField>
+                                        <asp:BoundField DataField="PROVINCIA" HeaderText="PROVINCIA" SortExpression="PROVINCIA"></asp:BoundField>
+                                        <asp:BoundField DataField="TELEFONO" HeaderText="TELEFONO" SortExpression="TELEFONO"></asp:BoundField>
+                                        <asp:BoundField DataField="COSTOORARIO" HeaderText="COSTOORARIO" SortExpression="COSTOORARIO"></asp:BoundField>
+                                        <asp:BoundField DataField="DATAINIZIORAPPORTO" HeaderText="DATAINIZIORAPPORTO" SortExpression="DATAINIZIORAPPORTO"></asp:BoundField>
+                                        <asp:BoundField DataField="DATAFINERAPPORTO" HeaderText="DATAFINERAPPORTO" SortExpression="DATAFINERAPPORTO"></asp:BoundField>
+                                    </Columns>
+                                </asp:GridView>
+                                <asp:SqlDataSource runat="server" ID="sdsSelectDipendenti" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spDIPENDENTI_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>                     
                             </div>
                             <div class="col-md-3">
                                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>

@@ -11,7 +11,7 @@ public class LAVORI
     public int chiave;
     public int chiaveCOMMESSA;
     public int chiaveDIPENDENTE;
-    public DateTime DATAORA;
+    public DateTime DATAORA; //verificare la conversione altrimenti passare a string
     public int ORE;
     public string DESCRIZIONE;
     public float PERNOTTAMENTO;

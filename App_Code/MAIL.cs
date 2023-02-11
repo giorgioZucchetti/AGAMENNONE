@@ -29,10 +29,9 @@ public class MAIL
         mail.IsBodyHtml = true;
         mail.Subject = "REGISTRAZIONE UTENTE";
         mail.Body = "<h4>Ciao!</h4><br/>";
-        mail.Body += "<h1>La seguente mail </h1>"+EMAIL+"<h1>Sta tentando di iscriversi al portale.</h1>";
-        mail.Body += "<h1>Puoi abilitarlo accedendo a questa pagina:</h1>";                             //concatenazione di stringhe
+        mail.Body += "<h1>La seguente mail </h1>" + EMAIL + "<h1>Sta tentando di iscriversi al portale.</h1>";
+        mail.Body += "<h1>Puoi abilitarlo accedendo al portale</h1>";                             //concatenazione di stringhe
         client.Send(mail);
-
     }
 
     public void Mail_Send_Utente()
@@ -40,11 +39,11 @@ public class MAIL
         //imposto il messaggio
         MailMessage mail = new MailMessage();
         mail.From = new MailAddress("generation@brovia.it");
-        mail.To.Add(EMAIL);  //il metodo add serve perchè la mail può essere inviata a più persone
+        mail.To.Add("giorgio.zucchetti00@gmail.com");  //il metodo add serve perchè la mail può essere inviata a più persone
         mail.IsBodyHtml = true;
         mail.Subject = "REGISTRAZIONE";
         mail.Body = "<h4>Ciao!</h4><br/>";
-        mail.Body += "<h1>Sei stato abilitato </h1>";                             
+        mail.Body += "<h1>Sei stato abilitato con la seguente mail di accesso</h1>" + EMAIL;                             
         client.Send(mail);
     }
 
@@ -53,11 +52,11 @@ public class MAIL
         //imposto il messaggio
         MailMessage mail = new MailMessage();
         mail.From = new MailAddress("generation@brovia.it");
-        mail.To.Add(EMAIL);  //il metodo add serve perchè la mail può essere inviata a più persone
+        mail.To.Add("giorgio.zucchetti00@gmail.com");  //il metodo add serve perchè la mail può essere inviata a più persone
         mail.IsBodyHtml = true;
         mail.Subject = "PASSWORD TEMPORANEA";
         mail.Body = "<h4>Ciao!</h4><br/>";
-        mail.Body += "<h1>La tua password temporanea é: </h1>"+PWD;
+        mail.Body += "<h1>La tua password temporanea:</h1>" + PWD;
         client.Send(mail);
     }
 

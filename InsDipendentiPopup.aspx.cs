@@ -14,7 +14,6 @@ public partial class InsDipendentiPopup : System.Web.UI.Page
 
     protected void btnInserisci_Click(object sender, EventArgs e)
     {
-        
         //istanzio la classe
         DIPENDENTI D = new DIPENDENTI();
 
@@ -32,7 +31,7 @@ public partial class InsDipendentiPopup : System.Web.UI.Page
         D.COSTOORARIO = float.Parse(txtCOSTOORARIO.Text.Trim());
         D.DATAINIZIORAPPORTO = DateTime.Parse(txtDATAINIZIORAPPORTO.Text.Trim());
         D.DATAFINERAPPORTO = DateTime.Parse(txtDATAFINERAPPORTO.Text.Trim());
-       
+
         //comando
         D.DIPENDENTI_Insert();
     }

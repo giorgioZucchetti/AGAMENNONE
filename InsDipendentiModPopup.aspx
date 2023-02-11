@@ -25,7 +25,7 @@
             </div>
             <div class="col-sm-2">
                 <asp:Label ID="lblRAGIONESOCIALE" class="form-label" runat="server" Text="Ragione Sociale"></asp:Label>
-                <asp:DropDownList ID="ddlRAGIONESOCIALE" class="btn-outline-primary" runat="server"></asp:DropDownList>
+                <asp:DropDownList ID="ddlRAGIONESOCIALE" class="btn-outline-primary" runat="server" DataTextField="RAGIONESOCIALE" DataValueField="chiave" DataSourceID="sdsSelectAziende"></asp:DropDownList><asp:SqlDataSource runat="server" ID="sdsSelectAziende" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spAZIENDE_SelectAll_DDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
             </div>
             <div class="col-sm-2">
                 <asp:Label ID="lblINDIRIZZO" class="form-label" runat="server" Text="Indirizzo"></asp:Label>
@@ -56,7 +56,12 @@
             <div class="row">
                 <div class="col">
                     <asp:Label ID="lblRUOLO" class="form-label" runat="server" Text="Ruolo"></asp:Label>
-                    <asp:DropDownList ID="ddlRUOLO" class="btn-outline-primary" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlRUOLO" class="btn-outline-primary" runat="server">
+                        <asp:ListItem Value="A">Amministratore</asp:ListItem>
+                        <asp:ListItem Value="U">Utente</asp:ListItem>
+                        <asp:ListItem Value="O">Operatore</asp:ListItem>
+                        <asp:ListItem Value="E">Utente Esterno</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
                 <div class="col">
                     <asp:Label ID="lblCOSTOORARIO" class="form-label" runat="server" Text="Costo Orario"></asp:Label>
@@ -75,7 +80,7 @@
             </div>
         </div>
         <div class="text-center mt-2">
-            <asp:Button ID="btnModifica" class="btn btn-primary" runat="server" Text="Modifica" />
+            <asp:Button ID="btnInserisci" class="btn btn-primary" runat="server" Text="Inserisci" OnClick="btnInserisci_Click"  />
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
