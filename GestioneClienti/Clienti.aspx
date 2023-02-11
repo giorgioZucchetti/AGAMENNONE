@@ -15,9 +15,9 @@
                     <div class="card-body">
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-9" style="overflow: auto;">
-                                <asp:GridView ID="Griglia" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsCLIENTI">
+                                <asp:GridView ID="Griglia" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsCLIENTI" OnSelectedIndexChanged="Griglia_SelectedIndexChanged1">
                                     <Columns>
-                                        <asp:CommandField ButtonType="Button" ShowSelectButton="True" SelectText="Modifica"/>
+                                        <asp:CommandField ButtonType="Button" ShowSelectButton="True"/>
                                         <asp:BoundField DataField="chiave" HeaderText="chiave" InsertVisible="False" ReadOnly="True" SortExpression="chiave" Visible="False" />
                                         <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONE SOCIALE" SortExpression="RAGIONESOCIALE" />
                                         <asp:BoundField DataField="INDIRIZZO" HeaderText="INDIRIZZO" SortExpression="INDIRIZZO" />
@@ -105,7 +105,7 @@
                 <!-- Modal body -->
                 <div class="modal-body" runat="server">
                     <div class="ratio ratio-1x1">
-                        <iframe src="POPUP_CLIENTI_Insert.aspx"></iframe>
+                        <iframe src="POPUP_CLIENTI_Update.aspx"></iframe>
                     </div>
                 </div>
 

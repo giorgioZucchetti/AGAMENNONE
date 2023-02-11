@@ -12,8 +12,8 @@ public class DIPENDENTI
     public int chiaveAZIENDA;
     public string EMAIL;
     public string PWD;
-    public int ABILITATO;
-    public int PRIMOACCESSO;
+    public bool ABILITATO;
+    public bool PRIMOACCESSO;
     public string RUOLO;
     public string COGNOME;
     public string NOME;
@@ -55,15 +55,12 @@ public class DIPENDENTI
         D.EseguiSPNonRead();
     }
 
-    public DataTable DIPENDENTI_Insert()
+    public void DIPENDENTI_Insert()
     {
         DATABASE D = new DATABASE();
-        DataTable DT = new DataTable();
         D.cmd.CommandText = "spDIPENDENTI_Insert";
         D.cmd.Parameters.AddWithValue("chiaveAZIENDA", chiaveAZIENDA);
         D.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("PWD", PWD);
-        D.cmd.Parameters.AddWithValue("ABILITATO", ABILITATO);
         D.cmd.Parameters.AddWithValue("RUOLO", RUOLO);
         D.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
         D.cmd.Parameters.AddWithValue("NOME", NOME);
@@ -75,8 +72,7 @@ public class DIPENDENTI
         D.cmd.Parameters.AddWithValue("COSTOORARIO", COSTOORARIO);
         D.cmd.Parameters.AddWithValue("DATAINIZIORAPPORTO", DATAINIZIORAPPORTO);
         D.cmd.Parameters.AddWithValue("DATAFINERAPPORTO", DATAFINERAPPORTO);
-        DT = D.EseguiSPRead();
-        return DT;
+        D.EseguiSPNonRead();
     }
 
     public DataTable spDIPENDENTI_Login()
@@ -97,7 +93,6 @@ public class DIPENDENTI
         DataTable DT = new DataTable();
         D.cmd.CommandText = "spDIPENDENTI_Registra";
         D.cmd.Parameters.AddWithValue("EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("PWD", PWD);
         D.cmd.Parameters.AddWithValue("NOME", NOME);
         D.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
         DT = D.EseguiSPRead();
@@ -115,7 +110,7 @@ public class DIPENDENTI
     {
         DataTable DT = new DataTable();
         DATABASE D = new DATABASE();
-        D.query = "spDIPENDENTI_SelectAll_DDL";
+        D.cmd.CommandText = "spDIPENDENTI_SelectAll_DDL";
         DT = D.EseguiSPRead();
         return DT;
     }
@@ -124,7 +119,7 @@ public class DIPENDENTI
     {
         DataTable DT = new DataTable();
         DATABASE D = new DATABASE();
-        D.query = "spDIPENDENTI_SelectByKey";
+        D.cmd.CommandText = "spDIPENDENTI_SelectByKey";
         D.cmd.Parameters.AddWithValue("@chiave", chiave);
         DT = D.EseguiSPRead();
         return DT;
@@ -138,9 +133,6 @@ public class DIPENDENTI
         D.cmd.Parameters.AddWithValue("@chiave", chiave);
         D.cmd.Parameters.AddWithValue("@chiaveAZIENDA", chiaveAZIENDA);
         D.cmd.Parameters.AddWithValue("@EMAIL", EMAIL);
-        D.cmd.Parameters.AddWithValue("@PWD", PWD);
-        D.cmd.Parameters.AddWithValue("@ABILITATO", ABILITATO);
-        D.cmd.Parameters.AddWithValue("@PRIMOACCESSO", PRIMOACCESSO);
         D.cmd.Parameters.AddWithValue("@RUOLO", RUOLO);
         D.cmd.Parameters.AddWithValue("COGNOME", COGNOME);
         D.cmd.Parameters.AddWithValue("@NOME", NOME);
@@ -154,6 +146,14 @@ public class DIPENDENTI
         D.cmd.Parameters.AddWithValue("@DATAFINERAPPORTO", DATAFINERAPPORTO);
         D.EseguiSPNonRead();
     }
+
+    public void DIPENDENTI_InsertTempPwd()
+    {
+        DATABASE D = new DATABASE();
+        D.cmd.CommandText = "spDIPENDENTI_InsertTempPwd";
+        D.cmd.Parameters.AddWithValue("@PWD", PWD);
+        D.cmd.Parameters.AddWithValue("@EMAIL", EMAIL);
+        D.EseguiSPNonRead();
+    }
         
-    
 }

@@ -55,7 +55,7 @@
                                                 </div>--%>
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                        <asp:Button ID="btnRegistra" class="btn btn-primary" runat="server" Text="Registrati" />
+                                        <asp:Button ID="btnRegistra" class="btn btn-primary" runat="server" Text="Registrati" OnClick="btnRegistra_Click" />
                                     </div>
                                 </div>
                                 <div class="card-footer text-center py-3">

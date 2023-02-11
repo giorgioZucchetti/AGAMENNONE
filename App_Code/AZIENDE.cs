@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 
-
+/// <summary>
+/// Questa classe si occupa dell'inserimento e della modifica dei dati delle aziende 
+/// </summary>
 public class AZIENDE
 {
     //membri della classe
@@ -34,6 +36,9 @@ public class AZIENDE
     }
 
     //metodi della classe
+    /// <summary>
+    /// Questo metodo inserisce i dati delle aziende nel database
+    /// </summary>
     public void AZIENDE_Insert() 
     {
         DATABASE D = new DATABASE();
@@ -54,7 +59,10 @@ public class AZIENDE
         D.cmd.Parameters.AddWithValue("TELTITOLARE", TELTITOLARE);
         D.EseguiSPNonRead();
     }
-
+    /// <summary>
+    /// Questo metodo seleziona tutte le colonne della tabella aziende
+    /// </summary>
+    /// <returns>Questo metodo ritorna una datatable con tutti i dati di aziende</returns>
     public DataTable AZIENDE_SelectAll()
     {
         DATABASE D = new DATABASE();
@@ -63,7 +71,10 @@ public class AZIENDE
         DT = D.EseguiSPRead();
         return DT;
     }
-
+    /// <summary>
+    /// Questo metodo seleziona alcuni dati delle aziende per mostrarli in una ddl
+    /// </summary>
+    /// <returns>Questo metodo ritorna una datatable con i dati di aziende</returns>
     public DataTable AZIENDE_SelectAll_DDL()
     {
         DATABASE D = new DATABASE();
@@ -72,7 +83,10 @@ public class AZIENDE
         DT = D.EseguiSPRead();
         return DT;
     }
-
+    /// <summary>
+    /// Questo metodo seleziona tutti i dati delle aziende, relativi ad una selezione di chiave primaria
+    /// </summary>
+    /// <returns>Questo metodo ritorna una datatable con i dati di aziende</returns>
     public DataTable AZIENDE_SelectByKey() 
     {
         DATABASE D = new DATABASE();
@@ -82,7 +96,9 @@ public class AZIENDE
         DT = D.EseguiSPRead();
         return DT;
     }
-
+    /// <summary>
+    /// Questo metodo aggiorna tutti i dati delle aziende, relativi ad una chiave primaria
+    /// </summary>
     public void AZIENDE_Update()
     {
         DATABASE D = new DATABASE();
