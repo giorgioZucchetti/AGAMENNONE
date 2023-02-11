@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,6 +9,7 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
         grdAccessi.DataSourceID = SqlDataSource1.ID;
         grdAccessi.DataBind();
         grdEventi.DataSourceID = SqlDataSource3.ID;
@@ -41,5 +42,6 @@ public partial class _Default : System.Web.UI.Page
     {
         EVENTI E = new EVENTI();
         E.EVENTI_DeleteAll();
+
     }
 }

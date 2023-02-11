@@ -14,7 +14,6 @@
                     <div class="card-body">
                         <div class="row" style="margin-top: 10px;">
                             <div class="col-md-9" style="overflow: auto;">
-
                                 <%--TABELLA TUTTI--%>
 
                                 <asp:GridView ID="Griglia" class="table" runat="server" DataSourceID="SqlDataSource3" AutoGenerateColumns="False" DataKeyNames="chiave">
@@ -54,6 +53,26 @@
                                 </asp:SqlDataSource>
 
                                 <%--TABELLA INTERVALLO--%>
+=======
+                                <%--TABELLA--%>
+
+                                <asp:GridView runat="server" class="table" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" DataKeyNames="chiaveCliente">
+                                    <Columns>
+                                        <asp:BoundField DataField="chiaveCliente" HeaderText="chiaveCliente" SortExpression="chiaveCliente" InsertVisible="False" ReadOnly="True" />
+                                        <asp:BoundField DataField="NOME" HeaderText="NOME" SortExpression="NOME" />
+                                        <asp:BoundField DataField="COGNOME" HeaderText="COGNOME" SortExpression="COGNOME" />
+                                        <asp:BoundField DataField="RAGIONE_SOCIALE" HeaderText="RAGIONE_SOCIALE" SortExpression="RAGIONE_SOCIALE" />
+                                        <asp:BoundField DataField="INDIRIZZO" HeaderText="INDIRIZZO" SortExpression="INDIRIZZO" />
+                                        <asp:BoundField DataField="CITTA" HeaderText="CITTA" SortExpression="CITTA" />
+                                        <asp:BoundField DataField="PROVINCIA" HeaderText="PROVINCIA" SortExpression="PROVINCIA" />
+                                        <asp:BoundField DataField="CAP" HeaderText="CAP" SortExpression="CAP" />
+                                        <asp:BoundField DataField="TELEFONO" HeaderText="TELEFONO" SortExpression="TELEFONO" />
+                                        <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL" />
+                                        <asp:BoundField DataField="DATANASCITA" HeaderText="DATANASCITA" SortExpression="DATANASCITA" />
+                                        <asp:BoundField DataField="CODICEFISCALE" HeaderText="CODICEFISCALE" SortExpression="CODICEFISCALE" />
+                                    </Columns>
+                                </asp:GridView>
+                                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ESERCIZIOAUTOSALONEConnectionString %>" SelectCommand="SELECT * FROM [REGISTRAZIONE]"></asp:SqlDataSource>
                             </div>
                             <div class="col-md-3">
                                 <div class="row">
@@ -102,7 +121,11 @@
 
                                 <div class="row mt-3">
                                     <div class="col-md-12 text-lg-end">
+
                                         <asp:Button ID="btnCercaIntervallo" class="btn btn-block btn-primary " data-bs-toggle="modal" data-bs-target="#myModal1" runat="server" data-bs-backdrop="static" Text="Cerca" OnClick="btnCercaIntervallo_Click" />
+
+                                        <asp:Button ID="btnCercaIntervallo" class="btn btn-block btn-primary " data-bs-toggle="modal" data-bs-target="#myModal1" runat="server" data-bs-backdrop="static" Text="Cerca" />
+
                                     </div>
                                 </div>
                                 <div class="row mt-5">
@@ -117,6 +140,7 @@
 
                                     <div class="col-md-6">
                                         <asp:Label ID="Label6" runat="server" Text="Anno"></asp:Label>
+
                                     </div>
 
                                     <div class="col-md-6">
@@ -153,13 +177,28 @@
                                             </asp:DropDownList>
                                         </div>
 
+                                        <asp:DropDownList ID="ddlANNO" class="btn btn-outline-primary" runat="server"></asp:DropDownList>
+
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <asp:Label ID="Label7" runat="server" Text="Mese"></asp:Label>
+                                        <asp:DropDownList ID="ddlMESE" class="btn btn-outline-primary" runat="server"></asp:DropDownList>
+
+
                                     </div>
                                 </div>
+
 
 
                                 <div class="row mt-3">
                                     <div class="col-md-12 text-lg-end">
                                         <asp:Button ID="btnCercaPeriodo" class="btn btn-block btn-primary" data-bs-toggle="modal" data-bs-target="#myModal1" runat="server" data-bs-backdrop="static" Text="Cerca" OnClick="btnCercaPeriodo_Click" />
+
+                                <div class="row mt-3">
+                                    <div class="col-md-12 text-lg-end">
+                                        <asp:Button ID="btnCercaPeriodo" class="btn btn-block btn-primary" data-bs-toggle="modal" data-bs-target="#myModal1" runat="server" data-bs-backdrop="static" Text="Cerca" />
+
                                     </div>
                                 </div>
                                 <div class="row mt-5">
@@ -178,10 +217,18 @@
 
                                     </div>
                                     <div class="col-md-12 text-lg-end">
+
                                         <asp:Button ID="btnCercaSaldo" class="btn btn-block btn-primary" data-bs-toggle="modal" data-bs-target="#myModal1" runat="server" data-bs-backdrop="static" Text="Cerca" OnClick="btnCercaSaldo_Click" />
 
                                     </div>
                                 </div>
+
+                                        <asp:Button ID="btnCercaSaldo" class="btn btn-block btn-primary" data-bs-toggle="modal" data-bs-target="#myModal1" runat="server" data-bs-backdrop="static" Text="Cerca" />
+
+                                    </div>
+                                </div>
+                               
+
                             </div>
                         </div>
                     </div>
@@ -189,6 +236,5 @@
             </div>
         </div>
     </div>
-
 </asp:Content>
 

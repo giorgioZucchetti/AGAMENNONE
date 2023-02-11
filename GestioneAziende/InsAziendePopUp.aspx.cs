@@ -40,12 +40,10 @@ public partial class InsAziendePopUp : System.Web.UI.Page
 
         //comando
         A.AZIENDE_Insert();
-
         //registro l'evento di registrazione
         DateTime DataOra = DateTime.Now;
         string evento = "Inserimento azienda";
         int chiaveDipendente = 1;
-
         EVENTI E = new EVENTI();
         E.CHIAVEDIPENDENTE = chiaveDipendente;
         E.DATAORA = DataOra;
