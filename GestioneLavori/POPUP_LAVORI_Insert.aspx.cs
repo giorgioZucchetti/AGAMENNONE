@@ -24,7 +24,7 @@ public partial class POPUP_LAVORI_Insert : System.Web.UI.Page
 
         LA.chiaveCOMMESSA = int.Parse(ddlCOMMESSA.SelectedValue);
         LA.chiaveDIPENDENTE = int.Parse(ddlDIPENDENTE.SelectedValue);
-        LA.DATAORA = txtData.Text.Trim();
+        LA.DATAORA = DateTime.Parse(txtData.Text.Trim());
         LA.ORE = int.Parse(txtOre.Text.Trim());
         LA.DESCRIZIONE = txtDescrizione.Text.Trim();
         LA.PERNOTTAMENTO = float.Parse(txtPernottamento.Text.Trim());

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,8 +45,9 @@ public partial class Default2 : System.Web.UI.Page
         Griglia.DataSourceID = SqlDataSource5.ID;
         Griglia.DataBind();
     }
-}
 
-
+    protected void Griglia_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        Session["chiave"] = Griglia.SelectedValue.ToString();
     }
 }
