@@ -18,15 +18,10 @@ public partial class POPUP_CLIENTI_Update : System.Web.UI.Page
                 return;
             }
             string chiave = Session["chiave"].ToString();
-            if (String.IsNullOrEmpty(chiave))
-            {
-                ClientScript.RegisterStartupScript(this.GetType(), "ERRORE", "alert('Nessun elemento selezionato');", true);
-                return;
-            }
             DataTable DT = new DataTable();
             //creo connessione con classe MODELLI
             CLIENTI C = new CLIENTI();
-            C.chiave = Convert.ToInt32(chiave);
+            C.chiave = int.Parse(chiave);
             DT = C.CLIENTI_SelectByKey();
 
             txtRagioneSociale.Text = DT.Rows[0]["RAGIONESOCIALE"].ToString();
@@ -61,7 +56,7 @@ public partial class POPUP_CLIENTI_Update : System.Web.UI.Page
 
         CLIENTI C= new CLIENTI();
 
-        C.chiave = Convert.ToInt32(chiave);
+        C.chiave = int.Parse(chiave);
         C.RAGIONESOCIALE = txtRagioneSociale.Text.Trim();
         C.INDIRIZZO = txtIndirizzo.Text.Trim();
         C.CITTA = txtCitta.Text.Trim();
