@@ -85,6 +85,7 @@ public class CLIENTI
     public void CLIENTI_Update()
     {
         D.cmd.CommandText = "spCLIENTI_Update";
+        D.cmd.Parameters.AddWithValue("@chiave", chiave);
         D.cmd.Parameters.AddWithValue("@RAGIONESOCIALE", RAGIONESOCIALE);
         D.cmd.Parameters.AddWithValue("@INDIRIZZO", INDIRIZZO);
         D.cmd.Parameters.AddWithValue("@CITTA", CITTA);
@@ -95,6 +96,7 @@ public class CLIENTI
         D.cmd.Parameters.AddWithValue("@CODICEFISCALE", CODICEFISCALE);
         D.cmd.Parameters.AddWithValue("@PIVA", PIVA);
         D.cmd.Parameters.AddWithValue("@PEC", PEC);
+        D.cmd.Parameters.AddWithValue("@CFE", CFE);
         D.cmd.Parameters.AddWithValue("@TITOLARE", TITOLARE);
         D.cmd.Parameters.AddWithValue("@EMAILTITOLARE", EMAILTITOLARE);
         D.cmd.Parameters.AddWithValue("@TELTITOLARE", TELTITOLARE);

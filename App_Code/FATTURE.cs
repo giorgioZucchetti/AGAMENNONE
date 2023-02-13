@@ -91,7 +91,7 @@ public class FATTURE
     }
     public DataTable FATTURE_SelectByKey()
     {
-        D.query = "spFATTURE_SelectByKey";
+        D.cmd.CommandText = "spFATTURE_SelectByKey";
         D.cmd.Parameters.AddWithValue("@chiave", chiave);
         DT = D.EseguiSPRead();
         return DT;
@@ -110,6 +110,12 @@ public class FATTURE
         D.EseguiSPNonRead();
     }
 
+    public void FATTURE_NullDataFatt()
+    {
+        D.cmd.CommandText = "sp_FATTUREDataFattureInsertNull";
+        D.cmd.Parameters.AddWithValue("DATAFATTURA", DATAFATTURA);
+        D.EseguiSPNonRead();
+    }
 }
 
 

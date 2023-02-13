@@ -26,6 +26,11 @@ public class COMMESSE
     public float PEDAGGI;
     public float MEZZI;
 
+    public COMMESSE()
+    {
+
+    }
+
     public void COMMESSE_Insert()
     {
         DATABASE D = new DATABASE();
@@ -74,7 +79,7 @@ public class COMMESSE
     {
         DataTable DT = new DataTable();
         DATABASE D = new DATABASE();
-        D.query = "spCOMMESSE_SelectByKey";
+        D.cmd.CommandText = "spCOMMESSE_SelectByKey";
         D.cmd.Parameters.AddWithValue("@chiave", chiave);
         DT = D.EseguiSPRead();
         return DT;
@@ -84,7 +89,7 @@ public class COMMESSE
     {
         DataTable DT = new DataTable();
         DATABASE D = new DATABASE();
-        D.query = "spCOMMESSE_SelectAll";
+        D.cmd.CommandText = "spCOMMESSE_SelectAll";
         DT = D.EseguiSPRead();
         return DT;
     }
@@ -93,7 +98,7 @@ public class COMMESSE
     {
         DataTable DT = new DataTable();
         DATABASE D = new DATABASE();
-        D.query = "spCOMMESSE_SelectAll_DDL_Cliente";
+        D.cmd.CommandText = "spCOMMESSE_SelectAll_DDL_Cliente";
         DT = D.EseguiSPRead();
         return DT;
     }
@@ -102,7 +107,7 @@ public class COMMESSE
     {
         DataTable DT = new DataTable();
         DATABASE D = new DATABASE();
-        D.query = "spCOMMESSE_SelectAll_DDL_CorpoOra";
+        D.cmd.CommandText = "spCOMMESSE_SelectAll_DDL_CorpoOra";
         DT = D.EseguiSPRead();
         return DT;
     }
@@ -111,7 +116,7 @@ public class COMMESSE
     {
         DataTable DT = new DataTable();
         DATABASE D = new DATABASE();
-        D.query = "spCOMMESSE_SelectAll_DDL_Responsabile";
+        D.cmd.CommandText = "spCOMMESSE_SelectAll_DDL_Responsabile";
         DT = D.EseguiSPRead();
         return DT;
     }
@@ -120,7 +125,7 @@ public class COMMESSE
     {
         DataTable DT = new DataTable();
         DATABASE D = new DATABASE();
-        D.query = "spCOMMESSE_SelectDate_Interval";
+        D.cmd.CommandText = "spCOMMESSE_SelectDate_Interval";
         D.cmd.Parameters.AddWithValue("@STARTDATE", STARTDATE);
         D.cmd.Parameters.AddWithValue("@ENDDATE", ENDDATE);
         DT = D.EseguiSPRead();
