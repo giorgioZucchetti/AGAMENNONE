@@ -13,22 +13,24 @@
 <body>
     <form id="form1" runat="server">
         <div class="container-fluid">
-            <div class="row">
-                <asp:Label ID="lblClienti" runat="server" Text="Scegli cliente"></asp:Label>
-                <asp:DropDownList class="form-select" ID="ddlCLIENTI" runat="server"></asp:DropDownList>
+           <div class="row">
+                <asp:Label ID="lblClienti" class="form-label" runat="server" Text="Scegli cliente"></asp:Label>
+                <asp:DropDownList class="form-select" ID="ddlCLIENTI" runat="server" DataSourceID="sdsCLIENTI" DataTextField="RAGIONESOCIALE" DataValueField="chiave"></asp:DropDownList>
+                <asp:SqlDataSource ID="sdsCLIENTI" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spCLIENTI_SelectAll_DDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
             </div>
             <div class="row">
-                <asp:Label ID="lblDipendenti" runat="server" Text="Scegli dipendente"></asp:Label>
-                <asp:DropDownList class="form-select" ID="ddlDIPENDENTI" runat="server"></asp:DropDownList>
+                <asp:Label ID="lblDipendenti" class="form-label" runat="server" Text="Scegli dipendente"></asp:Label>
+                <asp:DropDownList class="form-select" ID="ddlDIPENDENTI" runat="server" DataSourceID="sdsDIPENDENTE" DataTextField="nomecognome" DataValueField="chiave"></asp:DropDownList>
+                <asp:SqlDataSource ID="sdsDIPENDENTE" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spDIPENDENTI_SelectAll_DDL" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
             </div>
 
             <div class="row">
-                <asp:Label ID="lblCORPOORA" runat="server" Text="Scegli tipologia commessa"></asp:Label>
-                <select class="form-select">
+                <asp:Label ID="lblCORPOORA" class="form-label" runat="server" Text="Scegli tipologia commessa"></asp:Label>
+                <select id="ddlCORPOORA" runat="server" class="form-select">
                     <option value="C">Corpo</option>
                     <option value="R">Ora</option>
                 </select>
-            </div>
+                </div>
             <div class="row">
                 <div class="col-4">
                     <asp:Label ID="lblDATAAPERTURA" class="form-label" runat="server" Text="Data apertura"></asp:Label>
@@ -68,30 +70,30 @@
             <div class="row">
                 <div class="col">
                     <asp:Label ID="lblPERNOTTAMENTO" class="form-label" runat="server" Text="Pernottamento"></asp:Label>
-                    <asp:TextBox ID="TextBox1" class="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtPERNOTTAMENTO" class="form-control" runat="server"></asp:TextBox>
                 </div>
                 <div class="col">
                     <asp:Label ID="lblPASTO" class="form-label" runat="server" Text="Pasto"></asp:Label>
-                    <asp:TextBox ID="TextBox2" class="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtPASTO" class="form-control" runat="server"></asp:TextBox>
                 </div>
             </div>
 
             <div class="row">
                 <div class="col">
                     <asp:Label ID="lblKM" class="form-label" runat="server" Text="Km"></asp:Label>
-                    <asp:TextBox ID="TextBox3" class="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtKM" class="form-control" runat="server"></asp:TextBox>
                 </div>
                 <div class="col">
                     <asp:Label ID="lblPEDAGGI" class="form-label" runat="server" Text="Pedaggi"></asp:Label>
-                    <asp:TextBox ID="TextBox4" class="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtPEDAGGI" class="form-control" runat="server"></asp:TextBox>
                 </div>
                 <div class="col">
                     <asp:Label ID="lblMEZZI" class="form-label" runat="server" Text="Mezzi"></asp:Label>
-                    <asp:TextBox ID="TextBox5" class="form-control" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtMEZZI" class="form-control" runat="server"></asp:TextBox>
                 </div>
             </div>
             <div class="text-center mt-2">
-                <asp:Button ID="btnInserisci" class="btn btn-primary" runat="server" Text="Inserisci" />
+                <asp:Button ID="btnModifica" class="btn btn-primary" runat="server" Text="Modifica" OnClick="btnModifica_Click" />
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

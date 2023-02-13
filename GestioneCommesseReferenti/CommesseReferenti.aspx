@@ -13,8 +13,33 @@
                     </div>
                     <div class="card-body">
                         <div class="row top-buffer">
-                            <div class="col-md-9 divTable">
-                                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                            <div class="col-md-9 divTable" style="overflow:auto">
+                                <asp:GridView ID="Griglia" runat="server" AutoGenerateColumns="False" DataKeyNames="chiave" DataSourceID="sdsCOMMESSE" OnSelectedIndexChanged="Griglia_SelectedIndexChanged1">
+                                    <Columns>
+                                        <asp:CommandField ShowSelectButton="True" />
+                                        <asp:BoundField DataField="chiave" HeaderText="chiave" ReadOnly="True" SortExpression="chiave" Visible="False" />
+                                        <asp:BoundField DataField="chiaveCLIENTE" HeaderText="chiaveCLIENTE" SortExpression="chiaveCLIENTE" Visible="False" />
+                                        <asp:BoundField DataField="chiaveRESPONSABILE" HeaderText="chiaveRESPONSABILE" SortExpression="chiaveRESPONSABILE" Visible="False" />
+                                        <asp:BoundField DataField="NOME" HeaderText="NOME" SortExpression="NOME" />
+                                        <asp:BoundField DataField="COGNOME" HeaderText="COGNOME" SortExpression="COGNOME" />
+                                        <asp:BoundField DataField="EMAIL" HeaderText="EMAIL" SortExpression="EMAIL" />
+                                        <asp:BoundField DataField="RAGIONESOCIALE" HeaderText="RAGIONESOCIALE" SortExpression="RAGIONESOCIALE" />
+                                        <asp:BoundField DataField="CORPOORA" HeaderText="CORPOORA" SortExpression="CORPOORA" />
+                                        <asp:BoundField DataField="DATAAPERTURA" HeaderText="DATAAPERTURA" SortExpression="DATAAPERTURA" />
+                                        <asp:BoundField DataField="DATACHIUSURA" HeaderText="DATACHIUSURA" SortExpression="DATACHIUSURA" />
+                                        <asp:BoundField DataField="DATACONSEGNA" HeaderText="DATACONSEGNA" SortExpression="DATACONSEGNA" />
+                                        <asp:BoundField DataField="DESCRIZIONE" HeaderText="DESCRIZIONE" SortExpression="DESCRIZIONE" />
+                                        <asp:BoundField DataField="IMPORTOCORPO" HeaderText="IMPORTOCORPO" SortExpression="IMPORTOCORPO" />
+                                        <asp:BoundField DataField="IMPORTOORARIO" HeaderText="IMPORTOORARIO" SortExpression="IMPORTOORARIO" />
+                                        <asp:BoundField DataField="ANTICIPO" HeaderText="ANTICIPO" SortExpression="ANTICIPO" />
+                                        <asp:BoundField DataField="PERNOTTAMENTO" HeaderText="PERNOTTAMENTO" SortExpression="PERNOTTAMENTO" />
+                                        <asp:BoundField DataField="PASTO" HeaderText="PASTO" SortExpression="PASTO" />
+                                        <asp:BoundField DataField="KM" HeaderText="KM" SortExpression="KM" />
+                                        <asp:BoundField DataField="PEDAGGI" HeaderText="PEDAGGI" SortExpression="PEDAGGI" />
+                                        <asp:BoundField DataField="MEZZI" HeaderText="MEZZI" SortExpression="MEZZI" />
+                                    </Columns>
+                                </asp:GridView>
+                                <asp:SqlDataSource ID="sdsCOMMESSE" runat="server" ConnectionString="<%$ ConnectionStrings:AGAMENNONEConnectionString %>" SelectCommand="spCOMMESSE_SelectAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
                             </div>
                             <div class="col-md-3">
                                 <asp:UpdatePanel ID="up1" runat="server">

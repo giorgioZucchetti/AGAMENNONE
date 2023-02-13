@@ -11,4 +11,10 @@ public partial class Default2 : System.Web.UI.Page
     {
 
     }
+
+    protected void Griglia_SelectedIndexChanged1(object sender, EventArgs e)
+    {
+        //mancano i controlli formali
+        Session["chiave"] = Griglia.SelectedValue.ToString();
+    }
 }
