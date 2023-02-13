@@ -45,9 +45,6 @@ public partial class Gestione_Aziende_modAziendePopUp : System.Web.UI.Page
     {
         string chiave = Session["chiave"].ToString();
         AZIENDE A = new AZIENDE();
-        DataTable DT = new DataTable();
-
-        
         A.chiave = int.Parse(chiave);
         A.RAGIONESOCIALE = txtRAGIONESOCIALE.Text.Trim();
         A.INDIRIZZO = txtINDIRIZZO.Text.Trim();
@@ -64,7 +61,5 @@ public partial class Gestione_Aziende_modAziendePopUp : System.Web.UI.Page
         A.EMAILTITOLARE = txtEMAILTITOLARE.Text.Trim(); 
         A.TELTITOLARE = txtTELTITOLARE.Text.Trim();
         A.AZIENDE_Update();
-        
-
     }
 }
