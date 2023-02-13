@@ -14,6 +14,8 @@
                                     <h3 class="text-center font-weight-light my-4">Cambio Password</h3>
                                 </div>
                                 <div class="card-body">
+                                    <asp:Label ID="lblEmail" runat="server" Text="Email"></asp:Label>
+                                    <asp:TextBox class="form-control" ID="txtEMAIL" runat="server"></asp:TextBox>
                                     <%--<div class="form-floating mb-3">--%>
                                     <asp:Label ID="lblPWD" runat="server" Text="Inserisci Password"></asp:Label>
                                     <asp:TextBox class="form-control" ID="txtPWD" runat="server"></asp:TextBox>
@@ -27,7 +29,7 @@
                                             <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
                                         </div>--%>
                                     <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                        <asp:Button ID="btnCambioPWD" class="btn btn-primary" runat="server" Text="Cambia Password" />
+                                        <asp:Button ID="btnCambioPWD" class="btn btn-primary" runat="server" Text="Cambia Password" OnClick="btnCambioPWD_Click" />
 
                                         <%--<a class="small" href="password.html">Forgot Password?</a>--%>
                                     </div>
